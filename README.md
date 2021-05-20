@@ -59,7 +59,7 @@ for i in range(samples):
     axes[1][i].set_yticks(())
 ```
 
-![png](output_3_0.png)
+![png](md_img/output_3_0.png)
 
 ### We investigate which pixel carry information and which ones don't.
 
@@ -78,7 +78,7 @@ plt.imshow(np.mean(X_train.reshape(-1,28,28), axis=0))
 
     <matplotlib.image.AxesImage at 0x187a94764c0>
 
-![png](output_5_1.png)
+![png](md_img/output_5_1.png)
 
 ```python
 # lets find out more about the VarianceThreshold feature selection
@@ -106,7 +106,7 @@ plt.matshow(selected_features.reshape(28,28))
 
     <matplotlib.image.AxesImage at 0x18703c76ca0>
 
-![png](output_6_2.png)
+![png](md_img/output_6_2.png)
 
 ## Preprocessing
 
@@ -130,7 +130,7 @@ plt.imshow(X_scaled[1].reshape(28,28))
 
     <matplotlib.image.AxesImage at 0x18703bd7c40>
 
-![png](output_8_1.png)
+![png](md_img/output_8_1.png)
 
 ## Classify Zero digits
 
@@ -223,7 +223,7 @@ plt.imshow(selector.inverse_transform(coef).reshape(28,28))
 
     <matplotlib.image.AxesImage at 0x2063cd9eb80>
 
-![png](output_12_1.png)
+![png](md_img/output_12_1.png)
 
 ```python
 # mean of the digits we predicted to be zeroes
@@ -232,7 +232,7 @@ plt.imshow(np.mean(X_test[y_pred], axis=0).reshape(28,28))
 
     <matplotlib.image.AxesImage at 0x18703cdb580>
 
-![png](output_13_1.png)
+![png](md_img/output_13_1.png)
 
 ```python
 import matplotlib.pyplot as plt
@@ -263,7 +263,7 @@ for i in range(samples):
     axes[i].set_yticks(())
 ```
 
-![png](output_14_0.png)
+![png](md_img/output_14_0.png)
 
 ```python
 # let's see how sure our model is in its descision
@@ -283,7 +283,7 @@ ax2.set_title("digit is not zero")
 plt.show()
 ```
 
-![png](output_15_0.png)
+![png](md_img/output_15_0.png)
 
 Looks like our model is always pretty sure about it's descision. Not too shabby considering the time spent fitting/learning. Let's move on.
 
@@ -519,7 +519,7 @@ plt.legend(loc='best')
 
     <matplotlib.legend.Legend at 0x18707e75400>
 
-![png](output_23_1.png)
+![png](md_img/output_23_1.png)
 
 ```python
 wrongly_pred = y_test[np.logical_not(y_pred == y_test)]
@@ -530,7 +530,7 @@ plt.title('wrongly predicted digits with OVR LogisticRegression')
 
     Text(0.5, 1.0, 'wrongly predicted digits with OVR LogisticRegression')
 
-![png](output_24_1.png)
+![png](md_img/output_24_1.png)
 
 We can see that our model has a hard time predicting the digits `8` and `9`. But it's really good at predicting digits `0` and `1`.
 
@@ -554,7 +554,7 @@ plt.suptitle('Classification vectors for all digits')
 
     Text(0.5, 0.98, 'Classification vectors for all digits')
 
-![png](output_26_1.png)
+![png](md_img/output_26_1.png)
 
 ## Detect my own handwriting
 
@@ -576,7 +576,7 @@ for i in range(len(imgs)):
     l1_plot.set_xlabel('Class %i' % pred)
 ```
 
-![png](output_28_0.png)
+![png](md_img/output_28_0.png)
 
 Digit 7 was not predicted correctly. Very interestingly it turns out I have a different writing style for this digit. We can clearly see this by looking at the average digit 7 we trained on. It doesn't have this little bar which makes the model predict it as digit 4.
 
@@ -586,7 +586,7 @@ plt.imshow(np.mean(X_train[y_train == 7], axis=0).reshape(28,28))
 
     <matplotlib.image.AxesImage at 0x187088afa30>
 
-![png](output_30_1.png)
+![png](md_img/output_30_1.png)
 
 ## Hunt for the best accuracy
 
@@ -782,7 +782,7 @@ plt.hist(y_train)
      array([0. , 0.9, 1.8, 2.7, 3.6, 4.5, 5.4, 6.3, 7.2, 8.1, 9. ]),
      <BarContainer object of 10 artists>)
 
-![png](output_41_1.png)
+![png](md_img/output_41_1.png)
 
 ```python
 from sklearn.neighbors import KNeighborsClassifier
@@ -893,7 +893,7 @@ plt.title("Pixel importances with random forests of trees")
 plt.show()
 ```
 
-![png](output_48_0.png)
+![png](md_img/output_48_0.png)
 
 ```python
 # conda activate notebooks
